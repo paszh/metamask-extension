@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "setup": "yarn install && yarn setup:postinstall",
-    "setup:postinstall": "yarn patch-package && yarn allow-scripts",
+    "setup:postinstall": "yarn patch-package",
     "start": "node development/build/index.js dev",
     "start:lavamoat": "yarn build dev",
     "dist": "yarn build prod",
@@ -124,6 +124,7 @@
     "eth-phishing-detect": "^1.1.14",
     "eth-query": "^2.1.2",
     "eth-rpc-errors": "^4.0.2",
+    "eth-satochip-keyring": "file:../eth-satochip-keyring",
     "eth-sig-util": "^3.0.0",
     "eth-trezor-keyring": "^0.6.0",
     "ethereum-ens-network-map": "^1.0.2",

@@ -14,6 +14,7 @@ import { toChecksumAddress, stripHexPrefix } from 'ethereumjs-util';
 import log from 'loglevel';
 import TrezorKeyring from 'eth-trezor-keyring';
 import LedgerBridgeKeyring from '@metamask/eth-ledger-bridge-keyring';
+import SatochipKeyring from 'eth-satochip-keyring'
 import EthQuery from 'eth-query';
 import nanoid from 'nanoid';
 import contractMap from '@metamask/contract-metadata';
@@ -233,7 +234,7 @@ export default class MetamaskController extends EventEmitter {
       preferencesController: this.preferencesController,
     });
 
-    const additionalKeyrings = [TrezorKeyring, LedgerBridgeKeyring];
+    const additionalKeyrings = [TrezorKeyring, LedgerBridgeKeyring, SatochipKeyring, ];
     this.keyringController = new KeyringController({
       keyringTypes: additionalKeyrings,
       initState: initState.KeyringController,
@@ -1146,6 +1147,7 @@ export default class MetamaskController extends EventEmitter {
         .map((address) => toChecksumAddress(address)),
       ledger: [],
       trezor: [],
+      satochip: [],
     };
 
     // transactions
@@ -1244,6 +1246,9 @@ export default class MetamaskController extends EventEmitter {
         break;
       case 'ledger':
         keyringName = LedgerBridgeKeyring.type;
+        break;
+      case 'satochip':
+        keyringName = SatochipKeyring.type;
         break;
       default:
         throw new Error(
@@ -1736,7 +1741,15 @@ export default class MetamaskController extends EventEmitter {
           );
         });
       }
-
+      
+      case 'Satochip Hardware': {
+        return new Promise((_, reject) => {
+          reject(
+            new Error('Satochip does not support eth_getEncryptionPublicKey.'),
+          );
+        });
+      }
+      
       default: {
         const promise = this.encryptionPublicKeyManager.addUnapprovedMessageAsync(
           msgParams,

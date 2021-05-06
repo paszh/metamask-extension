@@ -58,6 +58,23 @@ export default class SelectHardware extends Component {
       </button>
     );
   }
+  
+  renderConnectToSatochipButton() {
+    return (
+      <button
+        className={classnames('hw-connect__btn', {
+          selected: this.state.selectedDevice === 'satochip',
+        })}
+        onClick={(_) => this.setState({ selectedDevice: 'satochip' })}
+      >
+        <img
+          className="hw-connect__btn__img"
+          src="images/satochip-logo.svg"
+          alt="Satochip"
+        />
+      </button>
+    );
+  }
 
   renderButtons() {
     return (
@@ -65,6 +82,9 @@ export default class SelectHardware extends Component {
         <div className="hw-connect__btn-wrapper">
           {this.renderConnectToLedgerButton()}
           {this.renderConnectToTrezorButton()}
+        </div>
+        <div className="hw-connect__btn-wrapper">
+          {this.renderConnectToSatochipButton()}
         </div>
       </>
     );
