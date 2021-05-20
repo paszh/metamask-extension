@@ -3,7 +3,7 @@ const { withFixtures, regularDelayMs } = require('../helpers');
 const enLocaleMessages = require('../../../app/_locales/en/messages.json');
 
 describe('Metamask Import UI', function () {
-  it('Importing wallet using seed phrase', async function () {
+  it('Importing wallet using Secret Recovery Phrase', async function () {
     const ganacheOptions = {
       accounts: [
         {
@@ -40,9 +40,9 @@ describe('Metamask Import UI', function () {
         // clicks the "No thanks" option on the metametrics opt-in screen
         await driver.clickElement('.btn-default');
 
-        // Import seed phrase
+        // Import Secret Recovery Phrase
         await driver.fill(
-          'input[placeholder="Paste seed phrase from clipboard"]',
+          'input[placeholder="Paste Secret Recovery Phrase from clipboard"]',
           testSeedPhrase,
         );
 
@@ -59,6 +59,11 @@ describe('Metamask Import UI', function () {
           text: enLocaleMessages.endOfFlowMessage10.message,
           tag: 'button',
         });
+
+        // close the what's new popup
+        const popover = await driver.findElement('.popover-container');
+        await driver.clickElement('[data-testid="popover-close"]');
+        await popover.waitForElementState('hidden');
 
         // Show account information
         await driver.clickElement(
