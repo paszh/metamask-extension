@@ -154,7 +154,7 @@
     "description": "The description of the application"
   },
   "appName": {
-    "message": "MetaMask",
+    "message": "MetaMask for Satochip",
     "description": "The name of the application"
   },
   "approvalAndAggregatorTxFeeCost": {
@@ -1063,8 +1063,11 @@
   "metaMaskConnectStatusParagraphTwo": {
     "message": "The connection status button shows if the website you’re visiting is connected to your currently selected account."
   },
-  "metamaskDescription": {
+  "metamaskDescriptionBckp": {
     "message": "Connecting you to Ethereum and the Decentralized Web."
+  },
+  "metamaskDescription": {
+    "message": "You must disable ALL other instances of MetaMask on ALL open browsers when using MetaMask for Satochip. If you have another instance running, it will interfere with requests to your Satochip and you will get unexpected behavior."
   },
   "metamaskSwapsOfflineDescription": {
     "message": "MetaMask Swaps is undergoing maintenance. Please check back later."
@@ -2377,7 +2380,7 @@
     "description": "$1 is a clickable link."
   },
   "welcome": {
-    "message": "Welcome to MetaMask"
+    "message": "Welcome to MetaMask for Satochip (Beta)"
   },
   "welcomeBack": {
     "message": "Welcome Back!"
