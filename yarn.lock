@@ -3837,9 +3837,9 @@
     form-data "^3.0.0"
 
 "@types/node@*":
-  version "15.3.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.3.1.tgz#23a06b87eedb524016616e886b116b8fdcb180af"
-  integrity sha512-weaeiP4UF4XgF++3rpQhpIJWsCTS4QJw5gvBhQu6cFIxTwyxWIe3xbnrY/o2lTCQ0lsdb8YIUDUvLR4Vuz5rbw==
+  version "15.12.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.12.2.tgz#1f2b42c4be7156ff4a6f914b2fb03d05fa84e38d"
+  integrity sha512-zjQ69G564OCIWIOHSXyQEEDpdpGl+G348RAKY0XXy9Z5kU9Vzv1GMNnkar/ZJ8dzXB3COzD9Mo9NtRZ4xfgUww==
 
 "@types/node@10.12.18":
   version "10.12.18"
@@ -10729,8 +10729,10 @@ eth-rpc-errors@^4.0.0, eth-rpc-errors@^4.0.2:
   dependencies:
     fast-safe-stringify "^2.0.6"
 
-"eth-satochip-keyring@file:../eth-satochip-keyring":
+eth-satochip-keyring@^0.1.0:
   version "0.1.0"
+  resolved "https://registry.yarnpkg.com/eth-satochip-keyring/-/eth-satochip-keyring-0.1.0.tgz#91e6c4c0661336f98d22cd6ed45e2b157676b30b"
+  integrity sha512-7x+L5bdzLOvztpJMYmM4cM97MwUEmgNvq9Q0005353/MtCHKRaGD3/qsD6K6RO508AyL1T6lTa2ak4UpYjerwA==
   dependencies:
     ethereumjs-util "^5.1.0"
     hdkey "^1.1.1"
